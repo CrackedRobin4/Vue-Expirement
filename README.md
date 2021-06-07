@@ -1,1 +1,1 @@
-First experience in vue js, tried to make math problem with an installed timer.
+First experience in vue js, tried to make random math problem with an installed timer.
