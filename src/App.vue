@@ -1,6 +1,6 @@
 <template>
   <h1 v-bind:title="message"> Hello. Here's your task of the day</h1>
-  <button @click="start">Start</button>
+  <button @click="start" id="start">Start</button>
   <div class="non-active" v-bind:class="{active: isActive}">
     <h3>Solve this problem</h3>
     <h4>Timer</h4>
@@ -34,6 +34,7 @@ export default {
   },
   methods: {
     start(){
+      document.querySelector('#start').setAttribute("disabled", true)
       document.getElementById("answer").value = ""
       this.timer = 10
       this.isActive = true
@@ -44,7 +45,7 @@ export default {
       let timerID = setInterval(() => {
         this.timer--
       }, 1000);
-      setTimeout(() => { clearInterval(timerID); this.isActive = false;}, 10000);
+      setTimeout(() => { clearInterval(timerID); this.isActive = false; document.querySelector('#start').removeAttribute("disabled", true)}, 10000);
     },
     check(){
       if(document.getElementById("answer").value == (this.random1 + this.random2)){
