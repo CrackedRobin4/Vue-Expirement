@@ -1,5 +1,5 @@
 <template>
-  <h1 v-bind:title="message"> Hello. Here's your task of the day</h1>
+  <h1> Hello. Here's your task of the day</h1>
   <button @click="start" id="start">Start</button>
   <div class="non-active" v-bind:class="{active: isActive}">
     <h3>Solve this problem</h3>
@@ -26,7 +26,6 @@ export default {
       isActive: false,
       isCorrect: false,
       isNotCorrect: false,
-      message: 'Hello World',
       timer: 10,
       random1: 0,
       random2: 0
